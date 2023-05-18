@@ -3,4 +3,5 @@
 ### CodeClimate code maintainability status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/96aa053248d03e8931ca/maintainability)](https://codeclimate.com/github/mynameiskatherine/java-project-61/maintainability)
 ### Demo of working:
-[Link to asciinema.org](https://asciinema.org/a/5IQsyK7m8OuuE38FzvsEV7Q8l)
+[game Even](https://asciinema.org/a/jroHJ238OKqn8ERJgzKOw74Ux)
+[game Calc](https://asciinema.org/a/9mnYXwwLeXEm08xCKnFuoPkiV)
