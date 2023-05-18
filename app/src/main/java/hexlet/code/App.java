@@ -1,5 +1,9 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GameDesign;
+
 import java.util.Scanner;
 
 public class App {
@@ -9,11 +13,12 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
         do {
             System.out.println("Your choice: ");
             chosenGame = userChoseGame.nextInt();
-        } while (chosenGame < 0 || chosenGame > 2);
+        } while (chosenGame < 0 || chosenGame > 3);
 
         switch (chosenGame) {
             case 0:
@@ -23,8 +28,12 @@ public class App {
                 Cli.greeting();
                 break;
             case 2:
-                Cli.greeting();
-                Even.main();
+                GameDesign even = new Even();
+                Engine.main(even);
+                break;
+            case 3:
+                GameDesign calc = new Calc();
+                Engine.main(calc);
                 break;
         }
     }
