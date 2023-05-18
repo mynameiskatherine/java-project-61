@@ -5,3 +5,4 @@
 ### Demo of working:
 [game Even](https://asciinema.org/a/jroHJ238OKqn8ERJgzKOw74Ux)
 [game Calc](https://asciinema.org/a/9mnYXwwLeXEm08xCKnFuoPkiV)
+[game GCD](https://asciinema.org/a/d30lVjedT4zZl2KCWRFokjUmd)
