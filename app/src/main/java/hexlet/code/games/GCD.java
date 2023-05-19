@@ -11,8 +11,8 @@ public class GCD implements GameDesign {
         return gameRules;
     }
     public String gameQuestion() {
-        firstNumber = Engine.getRandomNumber();
-        secondNumber = Engine.getRandomNumber();
+        firstNumber = Engine.randomNumber(0, 100);
+        secondNumber = Engine.randomNumber(0, 100);
         return Integer.toString(firstNumber) + " " + Integer.toString(secondNumber);
     }
     public String gameRightAnswer() {

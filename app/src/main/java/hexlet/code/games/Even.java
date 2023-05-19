@@ -15,7 +15,7 @@ public class Even implements GameDesign {
         return gameRules;
     }
     public String gameQuestion() {
-        questionedNumber = Engine.getRandomNumber();
+        questionedNumber = Engine.randomNumber(0, 100);
         return Integer.toString(questionedNumber);
     }
     public String gameRightAnswer() {

@@ -13,9 +13,9 @@ public class Calc implements GameDesign {
         return gameRules;
     }
     public String gameQuestion() {
-        firstNumber = Engine.getRandomNumber();
-        secondNumber = Engine.getRandomNumber();
-        operation = Engine.getRandomOperation();
+        firstNumber = Engine.randomNumber(0, 100);
+        secondNumber = Engine.randomNumber(0, 20);
+        operation = Engine.randomOperation();
         return Integer.toString(firstNumber) + " " + operation + " " + Integer.toString(secondNumber);
     }
     public String gameRightAnswer() {

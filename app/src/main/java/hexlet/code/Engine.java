@@ -6,11 +6,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    public static int getRandomNumber() {
+    public static int randomNumber(int start, int bound) {
         Random rnd = new Random();
-        return rnd.nextInt(100);
+        return rnd.nextInt(start, bound);
     }
-    public static char getRandomOperation() {
+    public static char randomOperation() {
         Random rnd = new Random();
         String operations = "+-*";
         return operations.charAt(rnd.nextInt(operations.length()));
