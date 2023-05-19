@@ -6,9 +6,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+
+    private static final int maxRandomNumber = 100;
+    private static final int maxRightAnswers = 3;
     public static int randomNumber() {
         Random rnd = new Random();
-        return rnd.nextInt(100);
+        return rnd.nextInt(maxRandomNumber);
     }
     public static char randomOperation() {
         Random rnd = new Random();
@@ -25,7 +28,7 @@ public class Engine {
 
         Scanner scanUserAnswer = new Scanner(System.in);
 
-        while (rightAnswersCount < 3 && wrongAnswersCount == 0) {
+        while (rightAnswersCount < maxRightAnswers && wrongAnswersCount == 0) {
             System.out.println("Question: " + gameType.gameQuestion());
             System.out.println("Your answer: ");
             String userAnswer = ((scanUserAnswer.nextLine()).trim()).toLowerCase();
@@ -35,7 +38,8 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 wrongAnswersCount = wrongAnswersCount + 1;
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.", userAnswer, gameType.gameRightAnswer());
+                System.out.printf("'%s' is wrong answer ;(. ", userAnswer);
+                System.out.printf("Correct answer was '%s'.", gameType.gameRightAnswer());
                 System.out.println();
             }
         }

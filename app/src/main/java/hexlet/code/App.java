@@ -4,6 +4,7 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class App {
+    private static final int maxNumberInMenu = 6;
     public static void main(String[] args) {
         Scanner userChoseGame = new Scanner(System.in);
         int chosenGame = -1;
@@ -22,7 +23,7 @@ public class App {
             } else {
                 userChoseGame.next();
             }
-        } while (chosenGame < 0 || chosenGame > 6);
+        } while (chosenGame < 0 || chosenGame > maxNumberInMenu);
 
         switch (Integer.toString(chosenGame)) {
             case "0":

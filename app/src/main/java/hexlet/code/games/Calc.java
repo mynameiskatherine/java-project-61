@@ -29,6 +29,8 @@ public class Calc implements GameDesign {
             case '*':
                 rightAnswer = firstNumber * secondNumber;
                 break;
+            default:
+                break;
         }
         return Integer.toString(rightAnswer);
     }

@@ -19,7 +19,7 @@ public class Progression implements GameDesign {
         progressionStep = Engine.randomNumber();
         missedPositionIndex = randomArrayIndex();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < progressionArrayLength; i++) {
             progressionArray[i] = Integer.toString(firstNumber + i * progressionStep);
         }
 
@@ -30,7 +30,7 @@ public class Progression implements GameDesign {
         return Integer.toString(firstNumber + missedPositionIndex * progressionStep);
     }
 
-    int randomArrayIndex() {
+    final int randomArrayIndex() {
         Random rnd = new Random();
         return rnd.nextInt(0, progressionArrayLength - 1);
     }

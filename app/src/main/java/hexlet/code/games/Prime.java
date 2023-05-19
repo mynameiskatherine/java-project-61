@@ -14,7 +14,7 @@ public class Prime implements GameDesign {
     public final String gameRightAnswer() {
         return isPrime(questionedNumber) ? "yes" : "no";
     }
-    boolean isPrime(int number) {
+    final boolean isPrime(int number) {
         if (number <= 1) {
             return false;
         } else {
