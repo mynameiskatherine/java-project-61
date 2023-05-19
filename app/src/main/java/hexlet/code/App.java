@@ -1,10 +1,15 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+import hexlet.code.games.GameDesign;
 import java.util.Scanner;
 
 public class App {
-    private static final int maxNumberInMenu = 6;
+    private static int maxNumberInMenu = 6;
     public static void main(String[] args) {
         Scanner userChoseGame = new Scanner(System.in);
         int chosenGame = -1;

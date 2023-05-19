@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static final int maxRandomNumber = 100;
-    private static final int maxRightAnswers = 3;
+    private static int maxRandomNumber = 100;
+    private static int maxRightAnswers = 3;
     public static int randomNumber() {
         Random rnd = new Random();
         return rnd.nextInt(maxRandomNumber);
@@ -43,7 +43,7 @@ public class Engine {
                 System.out.println();
             }
         }
-        if (wrongAnswersCount == 0 && rightAnswersCount == 3) {
+        if (wrongAnswersCount == 0 && rightAnswersCount == maxRightAnswers) {
             System.out.printf("Congratulations, %s!", Cli.getUserName());
             System.out.println();
         } else {

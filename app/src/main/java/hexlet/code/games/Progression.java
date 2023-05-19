@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression implements GameDesign {
-    private final int progressionArrayLength = 10;
+    private static int progressionArrayLength = 10;
     private static int firstNumber;
     private static int progressionStep;
     private static int missedPositionIndex;
