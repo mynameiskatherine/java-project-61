@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Engine {
 
     private static final int MAXRANDOMNUMBER = 100;
-    private static int MAXRIGHTANSWERS = 3;
+    private static final int MAXRIGHTANSWERS = 3;
     public static int randomNumber() {
         Random rnd = new Random();
         return rnd.nextInt(MAXRANDOMNUMBER);
