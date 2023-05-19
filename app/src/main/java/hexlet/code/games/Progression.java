@@ -2,16 +2,15 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Arrays;
-
 public class Progression implements GameDesign {
     private static int firstNumber;
     private static int progressionStep;
     private static int missedPositionIndex;
-    private final String gameRules = "What number is missing in the progression?";
+    @Override
     public String getGameRules() {
-        return gameRules;
+        return "What number is missing in the progression?";
     }
+    @Override
     public String gameQuestion() {
         int progressionArrayLength = 10;
         String[] progressionArray = new String[progressionArrayLength];
@@ -27,6 +26,7 @@ public class Progression implements GameDesign {
         progressionArray[missedPositionIndex] = "..";
         return String.join(" ", progressionArray);
     }
+    @Override
     public String gameRightAnswer() {
         return Integer.toString(firstNumber + missedPositionIndex * progressionStep);
     }

@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
-
 import java.util.Scanner;
 
 public class App {
@@ -35,23 +34,25 @@ public class App {
                 break;
             case 2:
                 GameDesign even = new Even();
-                Engine.main(even);
+                Engine.gameEngine(even);
                 break;
             case 3:
                 GameDesign calc = new Calc();
-                Engine.main(calc);
+                Engine.gameEngine(calc);
                 break;
             case 4:
                 GameDesign gcd = new GCD();
-                Engine.main(gcd);
+                Engine.gameEngine(gcd);
                 break;
             case 5:
                 GameDesign progression = new Progression();
-                Engine.main(progression);
+                Engine.gameEngine(progression);
                 break;
             case 6:
                 GameDesign prime = new Prime();
-                Engine.main(prime);
+                Engine.gameEngine(prime);
+                break;
+            default:
                 break;
         }
     }

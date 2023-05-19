@@ -16,7 +16,7 @@ public class Engine {
         return operations.charAt(rnd.nextInt(operations.length()));
     }
 
-    public static void main(GameDesign gameType) {
+    public static void gameEngine(GameDesign gameType) {
         Cli.greeting();
         System.out.println(gameType.getGameRules());
 
@@ -24,12 +24,11 @@ public class Engine {
         int wrongAnswersCount = 0;
 
         Scanner scanUserAnswer = new Scanner(System.in);
-        String userAnswer = new String("");
 
         while (rightAnswersCount < 3 && wrongAnswersCount == 0) {
             System.out.println("Question: " + gameType.gameQuestion());
             System.out.println("Your answer: ");
-            userAnswer = ((scanUserAnswer.nextLine()).trim()).toLowerCase();
+            String userAnswer = ((scanUserAnswer.nextLine()).trim()).toLowerCase();
 
             if (userAnswer.equals(gameType.gameRightAnswer())) {
                 rightAnswersCount = rightAnswersCount + 1;

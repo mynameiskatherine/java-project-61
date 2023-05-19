@@ -6,20 +6,21 @@ public class GCD implements GameDesign {
 
     private static int firstNumber;
     private static int secondNumber;
-    private final String gameRules = "Find the greatest common divisor of given numbers.";
+    @Override
     public String getGameRules() {
-        return gameRules;
+        return "Find the greatest common divisor of given numbers.";
     }
+    @Override
     public String gameQuestion() {
         firstNumber = Engine.randomNumber(0, 100);
         secondNumber = Engine.randomNumber(0, 100);
-        return Integer.toString(firstNumber) + " " + Integer.toString(secondNumber);
+        return firstNumber + " " + secondNumber;
     }
+    @Override
     public String gameRightAnswer() {
-        int r = 0, a, b;
-        a = (firstNumber > secondNumber) ? firstNumber : secondNumber; // a is greater number
-        b = (firstNumber < secondNumber) ? firstNumber : secondNumber; // b is smaller number
-        r = b;
+        int a = Math.max(firstNumber, secondNumber); // a is greater number
+        int b = Math.min(firstNumber, secondNumber); // b is smaller number
+        int r = b;
         while (a % b != 0) {
             r = a % b;
             a = b;

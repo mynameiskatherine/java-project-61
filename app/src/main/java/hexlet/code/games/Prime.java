@@ -4,18 +4,18 @@ import hexlet.code.Engine;
 
 public class Prime implements GameDesign {
     private static int questionedNumber;
-    private final String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
+    @Override
     public String getGameRules() {
-        return gameRules;
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
+    @Override
     public String gameQuestion() {
         questionedNumber = Engine.randomNumber(0, 500);
         return Integer.toString(questionedNumber);
     }
+    @Override
     public String gameRightAnswer() {
-        String rightAnswer = isPrime(questionedNumber) ? "yes" : "no";
-        return rightAnswer;
+        return isPrime(questionedNumber) ? "yes" : "no";
     }
     boolean isPrime(int number) {
         if (number <= 1) {
