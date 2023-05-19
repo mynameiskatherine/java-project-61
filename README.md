@@ -7,3 +7,4 @@
 [game Calc](https://asciinema.org/a/9mnYXwwLeXEm08xCKnFuoPkiV)
 [game GCD](https://asciinema.org/a/d30lVjedT4zZl2KCWRFokjUmd)
 [game Progression](https://asciinema.org/a/Sf0I4aqB4WR0JVnAkPmgcW4cl)
+[game Prime](https://asciinema.org/a/7T69syLDwza4DirSg71zUjRPZ)

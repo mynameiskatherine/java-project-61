@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner userChoseGame = new Scanner(System.in);
-        int numberOfGames = 5;
+        int numberOfGames = 6;
         int chosenGame = -1;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -15,6 +15,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         do {
             System.out.println("Your choice: ");
@@ -48,6 +49,9 @@ public class App {
                 GameDesign progression = new Progression();
                 Engine.main(progression);
                 break;
+            case 6:
+                GameDesign prime = new Prime();
+                Engine.main(prime);
         }
     }
 }
