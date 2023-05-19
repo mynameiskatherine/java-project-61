@@ -6,9 +6,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    public static int randomNumber(int start, int bound) {
+    public static int randomNumber() {
         Random rnd = new Random();
-        return rnd.nextInt(start, bound);
+        return rnd.nextInt(100);
     }
     public static char randomOperation() {
         Random rnd = new Random();
@@ -18,7 +18,7 @@ public class Engine {
 
     public static void gameEngine(GameDesign gameType) {
         Cli.greeting();
-        System.out.println(gameType.getGameRules());
+        System.out.println(gameType.gameRules());
 
         int rightAnswersCount = 0;
         int wrongAnswersCount = 0;

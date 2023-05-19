@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 public interface GameDesign {
-    String getGameRules();
+    String gameRules();
     String gameQuestion();
     String gameRightAnswer();
 }

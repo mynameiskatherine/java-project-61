@@ -8,19 +8,16 @@ public class Calc implements GameDesign {
     private static int secondNumber;
     private static char operation;
 
-    @Override
-    public String getGameRules() {
+    public final String gameRules() {
         return "What is the result of the expression?";
     }
-    @Override
-    public String gameQuestion() {
-        firstNumber = Engine.randomNumber(0, 100);
-        secondNumber = Engine.randomNumber(0, 20);
+    public final String gameQuestion() {
+        firstNumber = Engine.randomNumber();
+        secondNumber = Engine.randomNumber();
         operation = Engine.randomOperation();
         return firstNumber + " " + operation + " " + secondNumber;
     }
-    @Override
-    public String gameRightAnswer() {
+    public final String gameRightAnswer() {
         int rightAnswer = 0;
         switch (operation) {
             case '+':

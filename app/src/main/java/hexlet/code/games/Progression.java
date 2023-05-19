@@ -2,22 +2,22 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
+
 public class Progression implements GameDesign {
+    private final int progressionArrayLength = 10;
     private static int firstNumber;
     private static int progressionStep;
     private static int missedPositionIndex;
-    @Override
-    public String getGameRules() {
+    public final String gameRules() {
         return "What number is missing in the progression?";
     }
-    @Override
-    public String gameQuestion() {
-        int progressionArrayLength = 10;
+    public final String gameQuestion() {
         String[] progressionArray = new String[progressionArrayLength];
 
-        firstNumber = Engine.randomNumber(0, 100);
-        progressionStep = Engine.randomNumber(1, 20);
-        missedPositionIndex = Engine.randomNumber(0, progressionArrayLength - 1);
+        firstNumber = Engine.randomNumber();
+        progressionStep = Engine.randomNumber();
+        missedPositionIndex = randomArrayIndex();
 
         for (int i = 0; i < 10; i++) {
             progressionArray[i] = Integer.toString(firstNumber + i * progressionStep);
@@ -26,8 +26,12 @@ public class Progression implements GameDesign {
         progressionArray[missedPositionIndex] = "..";
         return String.join(" ", progressionArray);
     }
-    @Override
-    public String gameRightAnswer() {
+    public final String gameRightAnswer() {
         return Integer.toString(firstNumber + missedPositionIndex * progressionStep);
+    }
+
+    int randomArrayIndex() {
+        Random rnd = new Random();
+        return rnd.nextInt(0, progressionArrayLength - 1);
     }
 }
