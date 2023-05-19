@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static int maxRandomNumber = 100;
-    private static int maxRightAnswers = 3;
+    private static final int MAXRANDOMNUMBER = 100;
+    private static int MAXRIGHTANSWERS = 3;
     public static int randomNumber() {
         Random rnd = new Random();
-        return rnd.nextInt(maxRandomNumber);
+        return rnd.nextInt(MAXRANDOMNUMBER);
     }
     public static char randomOperation() {
         Random rnd = new Random();
@@ -28,7 +28,7 @@ public class Engine {
 
         Scanner scanUserAnswer = new Scanner(System.in);
 
-        while (rightAnswersCount < maxRightAnswers && wrongAnswersCount == 0) {
+        while (rightAnswersCount < MAXRIGHTANSWERS && wrongAnswersCount == 0) {
             System.out.println("Question: " + gameType.gameQuestion());
             System.out.println("Your answer: ");
             String userAnswer = ((scanUserAnswer.nextLine()).trim()).toLowerCase();
@@ -43,7 +43,7 @@ public class Engine {
                 System.out.println();
             }
         }
-        if (wrongAnswersCount == 0 && rightAnswersCount == maxRightAnswers) {
+        if (wrongAnswersCount == 0 && rightAnswersCount == MAXRIGHTANSWERS) {
             System.out.printf("Congratulations, %s!", Cli.getUserName());
             System.out.println();
         } else {

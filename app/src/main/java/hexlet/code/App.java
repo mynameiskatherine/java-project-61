@@ -9,7 +9,7 @@ import hexlet.code.games.GameDesign;
 import java.util.Scanner;
 
 public class App {
-    private static int maxNumberInMenu = 6;
+    private static final int MAXMENUPOINT = 6;
     public static void main(String[] args) {
         Scanner userChoseGame = new Scanner(System.in);
         int chosenGame = -1;
@@ -28,7 +28,7 @@ public class App {
             } else {
                 userChoseGame.next();
             }
-        } while (chosenGame < 0 || chosenGame > maxNumberInMenu);
+        } while (chosenGame < 0 || chosenGame > MAXMENUPOINT);
 
         switch (Integer.toString(chosenGame)) {
             case "0":

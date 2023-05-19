@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression implements GameDesign {
-    private static int progressionArrayLength = 10;
+    private static final int PROGRESSIONLENGTH = 10;
     private static int firstNumber;
     private static int progressionStep;
     private static int missedPositionIndex;
@@ -13,13 +13,13 @@ public class Progression implements GameDesign {
         return "What number is missing in the progression?";
     }
     public final String gameQuestion() {
-        String[] progressionArray = new String[progressionArrayLength];
+        String[] progressionArray = new String[PROGRESSIONLENGTH];
 
         firstNumber = Engine.randomNumber();
         progressionStep = Engine.randomNumber();
         missedPositionIndex = randomArrayIndex();
 
-        for (int i = 0; i < progressionArrayLength; i++) {
+        for (int i = 0; i < PROGRESSIONLENGTH; i++) {
             progressionArray[i] = Integer.toString(firstNumber + i * progressionStep);
         }
 
@@ -32,6 +32,6 @@ public class Progression implements GameDesign {
 
     final int randomArrayIndex() {
         Random rnd = new Random();
-        return rnd.nextInt(0, progressionArrayLength - 1);
+        return rnd.nextInt(0, PROGRESSIONLENGTH - 1);
     }
 }
