@@ -16,14 +16,18 @@ public class GCD implements GameDesign {
         return firstNumber + " " + secondNumber;
     }
     public final String gameRightAnswer() {
-        int a = Math.max(firstNumber, secondNumber); // a is greater number
-        int b = Math.min(firstNumber, secondNumber); // b is smaller number
-        int r = b;
-        while (a % b != 0) {
-            r = a % b;
-            a = b;
-            b = r;
+        if (firstNumber == 0 || secondNumber == 0) {
+            return Integer.toString(0);
+        } else {
+            int a = Math.max(firstNumber, secondNumber); // a is greater number
+            int b = Math.min(firstNumber, secondNumber); // b is smaller number
+            int r = b;
+            while (a % b != 0) {
+                r = a % b;
+                a = b;
+                b = r;
+            }
+            return Integer.toString(r);
         }
-        return Integer.toString(r);
     }
 }
