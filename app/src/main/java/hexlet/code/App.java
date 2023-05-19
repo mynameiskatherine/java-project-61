@@ -52,6 +52,7 @@ public class App {
             case 6:
                 GameDesign prime = new Prime();
                 Engine.main(prime);
+                break;
         }
     }
 }
