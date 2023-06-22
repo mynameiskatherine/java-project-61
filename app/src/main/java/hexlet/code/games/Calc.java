@@ -1,9 +1,9 @@
-package hexlet.code.games;
+package app.src.main.java.hexlet.code.games;
 
-import hexlet.code.Engine;
+import app.src.main.java.hexlet.code.GameUtils;
 
 public class Calc implements GameDesign {
-
+    private static final int MAXRANDOMNUMBER = 50;
     private static int firstNumber;
     private static int secondNumber;
     private static char operation;
@@ -11,12 +11,14 @@ public class Calc implements GameDesign {
     public final String gameRules() {
         return "What is the result of the expression?";
     }
+
     public final String gameQuestion() {
-        firstNumber = Engine.randomNumber();
-        secondNumber = Engine.randomNumber();
-        operation = Engine.randomOperation();
+        firstNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);
+        secondNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);
+        operation = GameUtils.randomOperation();
         return firstNumber + " " + operation + " " + secondNumber;
     }
+
     public final String gameRightAnswer() {
         int rightAnswer = 0;
         switch (operation) {

@@ -1,20 +1,22 @@
-package hexlet.code.games;
+package app.src.main.java.hexlet.code.games;
 
-import hexlet.code.Engine;
+import app.src.main.java.hexlet.code.GameUtils;
 
 public class GCD implements GameDesign {
-
+    private static final int MAXRANDOMNUMBER = 100;
     private static int firstNumber;
     private static int secondNumber;
 
     public final String gameRules() {
         return "Find the greatest common divisor of given numbers.";
     }
+
     public final String gameQuestion() {
-        firstNumber = Engine.randomNumber();
-        secondNumber = Engine.randomNumber();
+        firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
+        secondNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         return firstNumber + " " + secondNumber;
     }
+
     public final String gameRightAnswer() {
         if (firstNumber == 0 || secondNumber == 0) {
             return Integer.toString(0);
