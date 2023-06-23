@@ -1,7 +1,7 @@
 package app.src.main.java.hexlet.code;
 
-import java.util.Scanner;
 import org.apache.commons.lang3.StringUtils;
+import java.util.Scanner;
 
 public class Cli {
     private static String userName;

@@ -1,21 +1,22 @@
 package app.src.main.java.hexlet.code.games;
 
+import app.src.main.java.hexlet.code.Engine;
 import app.src.main.java.hexlet.code.GameUtils;
 
 public class Even implements GameDesign {
-    private static int questionedNumber;
     private static final int MAXRANDOMNUMBER = 10000;
+    public final String gameRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static String gameQuestion;
+    private static String gameRightAnswer;
 
-    public final String gameRules() {
-        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public void game() {
+        getQuestionAnswer();
+        Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
 
-    public final String gameQuestion() {
-        questionedNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);
-        return Integer.toString(questionedNumber);
-    }
-
-    public final String gameRightAnswer() {
-        return questionedNumber % 2 == 0 ? "yes" : "no";
+    private void getQuestionAnswer() {
+        int questionedNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);
+        gameQuestion = Integer.toString(questionedNumber);
+        gameRightAnswer = questionedNumber % 2 == 0 ? "yes" : "no";
     }
 }

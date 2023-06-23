@@ -11,7 +11,7 @@ public class App {
         int chosenPoint = Menu.choseMenuPoint();
 
         if (GameList.containingGameInMenu(chosenPoint)) {
-            Engine.gameEngine(GameList.getGame(chosenPoint));
+            (GameList.getGame(chosenPoint)).game();
         } else {
             switch (chosenPoint) {
                 case 0 -> System.out.println("Bye!");

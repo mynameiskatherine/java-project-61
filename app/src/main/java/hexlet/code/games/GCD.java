@@ -1,25 +1,26 @@
 package app.src.main.java.hexlet.code.games;
 
+import app.src.main.java.hexlet.code.Engine;
 import app.src.main.java.hexlet.code.GameUtils;
 
 public class GCD implements GameDesign {
     private static final int MAXRANDOMNUMBER = 100;
-    private static int firstNumber;
-    private static int secondNumber;
+    private final String gameRules = "Find the greatest common divisor of given numbers.";
+    private static String gameQuestion;
+    private static String gameRightAnswer;
 
-    public final String gameRules() {
-        return "Find the greatest common divisor of given numbers.";
+    public void game() {
+        getQuestionAnswer();
+        Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
 
-    public final String gameQuestion() {
-        firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
-        secondNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
-        return firstNumber + " " + secondNumber;
-    }
+    private void getQuestionAnswer() {
+        int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
+        int secondNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
+        gameQuestion = firstNumber + " " + secondNumber;
 
-    public final String gameRightAnswer() {
         if (firstNumber == 0 || secondNumber == 0) {
-            return Integer.toString(0);
+            gameRightAnswer = Integer.toString(0);
         } else {
             int a = Math.max(firstNumber, secondNumber); // a is greater number
             int b = Math.min(firstNumber, secondNumber); // b is smaller number
@@ -29,7 +30,7 @@ public class GCD implements GameDesign {
                 a = b;
                 b = r;
             }
-            return Integer.toString(r);
+            gameRightAnswer = Integer.toString(r);
         }
     }
 }

@@ -1,36 +1,32 @@
 package app.src.main.java.hexlet.code.games;
 
+import app.src.main.java.hexlet.code.Engine;
 import app.src.main.java.hexlet.code.GameUtils;
-
-import java.util.Random;
 
 public class Progression implements GameDesign {
     private static final int PROGRESSIONLENGTH = 10;
     private static final int MAXRANDOMNUMBER = 100;
-    private static int firstNumber;
-    private static int progressionStep;
-    private static int missedPositionIndex;
+    private final String gameRules = "What number is missing in the progression?";
+    private static String gameQuestion;
+    private static String gameRightAnswer;
 
-    public final String gameRules() {
-        return "What number is missing in the progression?";
+    public void game() {
+        getQuestionAnswer();
+        Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
-
-    public final String gameQuestion() {
+    private static void getQuestionAnswer() {
         String[] progressionArray = new String[PROGRESSIONLENGTH];
-
-        firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
-        progressionStep = GameUtils.randomNumber(0, PROGRESSIONLENGTH);
-        missedPositionIndex = GameUtils.randomNumber(0, PROGRESSIONLENGTH - 1);
+        int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
+        int progressionStep = GameUtils.randomNumber(0, PROGRESSIONLENGTH);
+        int missedPositionIndex = GameUtils.randomNumber(0, PROGRESSIONLENGTH - 1);
 
         for (int i = 0; i < PROGRESSIONLENGTH; i++) {
             progressionArray[i] = Integer.toString(firstNumber + i * progressionStep);
         }
 
         progressionArray[missedPositionIndex] = "..";
-        return String.join(" ", progressionArray);
-    }
+        gameQuestion = String.join(" ", progressionArray);
 
-    public final String gameRightAnswer() {
-        return Integer.toString(firstNumber + missedPositionIndex * progressionStep);
+        gameRightAnswer = Integer.toString(firstNumber + missedPositionIndex * progressionStep);
     }
 }
