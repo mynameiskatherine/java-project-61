@@ -9,12 +9,12 @@ public class Prime implements GameDesign {
     private static String gameQuestion;
     private static String gameRightAnswer;
 
-    public static void game() {
+    public final void game() {
         getQuestionAnswer();
         Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
 
-    private static void getQuestionAnswer() {
+    private void getQuestionAnswer() {
         int questionedNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         gameQuestion = Integer.toString(questionedNumber);
         gameRightAnswer = isPrime(questionedNumber) ? "yes" : "no";

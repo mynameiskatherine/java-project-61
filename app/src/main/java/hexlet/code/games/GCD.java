@@ -9,12 +9,12 @@ public class GCD implements GameDesign {
     private static String gameQuestion;
     private static String gameRightAnswer;
 
-    public static void game() {
+    public final void game() {
         getQuestionAnswer();
         Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
 
-    private static void getQuestionAnswer() {
+    private void getQuestionAnswer() {
         int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         int secondNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         gameQuestion = firstNumber + " " + secondNumber;

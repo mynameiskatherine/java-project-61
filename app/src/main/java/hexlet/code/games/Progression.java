@@ -10,11 +10,11 @@ public class Progression implements GameDesign {
     private static String gameQuestion;
     private static String gameRightAnswer;
 
-    public static void game() {
+    public final void game() {
         getQuestionAnswer();
         Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
-    private static void getQuestionAnswer() {
+    private void getQuestionAnswer() {
         String[] progressionArray = new String[PROGRESSIONLENGTH];
         int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         int progressionStep = GameUtils.randomNumber(0, PROGRESSIONLENGTH);

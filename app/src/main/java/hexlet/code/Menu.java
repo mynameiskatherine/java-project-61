@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Menu {
     private static HashMap<Integer, String> menu = new HashMap<Integer, String>() {{
-        put(0, "Exit");
-        put(1, "Greet");
-    }};
+            put(0, "Exit");
+            put(1, "Greet");
+        }};
 
     public static void addToMenu(int point, String pointName) {
         menu.put(point, pointName);

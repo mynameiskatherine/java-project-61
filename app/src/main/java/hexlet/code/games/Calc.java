@@ -9,25 +9,35 @@ public class Calc implements GameDesign {
     private static String gameQuestion;
     private static String gameRightAnswer;
 
-    public static void game() {
+    public final void game() {
         getQuestionAnswer();
         Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
 
-    private static void getQuestionAnswer() {
+    private void getQuestionAnswer() {
         int firstNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);
         int secondNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);
         char operation = GameUtils.randomOperation();
         gameQuestion = firstNumber + " " + operation + " " + secondNumber;
 
-        String result = "";
+        gameRightAnswer = Integer.toString(makeOperation(operation, firstNumber, secondNumber));
+    }
+
+    private int makeOperation(char operation, int firstNumber, int secondNumber) {
         switch (operation) {
-            case '+' -> result = Integer.toString(firstNumber + secondNumber);
-            case '-' -> result = Integer.toString(firstNumber - secondNumber);
-            case '*' -> result = Integer.toString(firstNumber * secondNumber);
+            case '+' -> {
+                return (firstNumber + secondNumber);
+            }
+            case '-' -> {
+                return (firstNumber - secondNumber);
+            }
+            case '*' -> {
+                return (firstNumber * secondNumber);
+            }
             default -> {
+                return 0;
             }
         }
-        gameRightAnswer = result;
     }
+
 }
