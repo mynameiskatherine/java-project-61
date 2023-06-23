@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Menu {
-    private static final HashMap<Integer, String> menu = new HashMap<Integer, String>() {{
+    private static HashMap<Integer, String> menu = new HashMap<Integer, String>() {{
         put(0, "Exit");
         put(1, "Greet");
     }};

@@ -7,12 +7,18 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 
 public class GameAdding {
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+
 
     public static void fillingGameList() {
-        GameList.addNewGame(3, "Calc", new Calc());
-        GameList.addNewGame(2, "Even", new Even());
-        GameList.addNewGame(6, "Prime", new Prime());
-        GameList.addNewGame(4, "GCD", new GCD());
-        GameList.addNewGame(5, "Progression", new Progression());
+        GameList.addNewGame(CALC, "Calc", new Calc());
+        GameList.addNewGame(EVEN, "Even", new Even());
+        GameList.addNewGame(PRIME, "Prime", new Prime());
+        GameList.addNewGame(GCD, "GCD", new GCD());
+        GameList.addNewGame(PROGRESSION, "Progression", new Progression());
     }
 }
