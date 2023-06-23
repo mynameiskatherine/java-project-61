@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import app.src.main.java.hexlet.code.games.GameDesign;
+import hexlet.code.games.GameDesign;
 import java.util.HashMap;
 
 public class GameList {
