@@ -1,7 +1,7 @@
-package app.src.main.java.hexlet.code.games;
+package hexlet.code.games;
 
-import app.src.main.java.hexlet.code.Engine;
-import app.src.main.java.hexlet.code.GameUtils;
+import hexlet.code.Engine;
+import hexlet.code.GameUtils;
 
 public class Progression implements GameDesign {
     private static final int PROGRESSIONLENGTH = 10;

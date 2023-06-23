@@ -1,4 +1,4 @@
-package app.src.main.java.hexlet.code;
+package hexlet.code;
 
 import app.src.main.java.hexlet.code.games.GameDesign;
 import java.util.HashMap;
