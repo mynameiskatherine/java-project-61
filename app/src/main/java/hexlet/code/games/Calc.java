@@ -9,7 +9,7 @@ public class Calc implements GameDesign {
     private static String gameQuestion;
     private static String gameRightAnswer;
 
-    public final void game() {
+    public final void playGame() {
         getQuestionAnswer();
         Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }

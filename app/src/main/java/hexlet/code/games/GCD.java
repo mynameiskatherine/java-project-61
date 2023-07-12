@@ -9,7 +9,7 @@ public class GCD implements GameDesign {
     private static String gameQuestion;
     private static String gameRightAnswer;
 
-    public final void game() {
+    public final void playGame() {
         getQuestionAnswer();
         Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
     }
@@ -18,9 +18,12 @@ public class GCD implements GameDesign {
         int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         int secondNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         gameQuestion = firstNumber + " " + secondNumber;
+        gameRightAnswer = Integer.toString(findGCD(firstNumber, secondNumber));
+    }
 
+    private int findGCD(int firstNumber, int secondNumber) {
         if (firstNumber == 0 || secondNumber == 0) {
-            gameRightAnswer = Integer.toString(0);
+            return 0;
         } else {
             int a = Math.max(firstNumber, secondNumber); // a is greater number
             int b = Math.min(firstNumber, secondNumber); // b is smaller number
@@ -30,7 +33,7 @@ public class GCD implements GameDesign {
                 a = b;
                 b = r;
             }
-            gameRightAnswer = Integer.toString(r);
+            return r;
         }
     }
 }

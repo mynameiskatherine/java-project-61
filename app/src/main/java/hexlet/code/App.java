@@ -11,12 +11,12 @@ public class App {
         int chosenPoint = Menu.choseMenuPoint();
 
         if (GameList.containingGameInMenu(chosenPoint)) {
-            (GameList.getGame(chosenPoint)).game();
+            (GameList.getGame(chosenPoint)).playGame();
         } else {
             switch (chosenPoint) {
                 case 0 -> System.out.println("Bye!");
                 case 1 -> Cli.greeting();
-                default -> System.out.println();
+                default -> throw new Error("Unknown chosenPoint: " + chosenPoint);
             }
         }
     }
