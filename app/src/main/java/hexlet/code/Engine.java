@@ -18,7 +18,7 @@ public class Engine {
         while (userName.equals(""));
         System.out.printf("Hello, %s!", userName);
         System.out.println();
-        //end of Greeting
+        //end
         System.out.println(gameRules);
 
         Scanner scanUserAnswer = new Scanner(System.in);
