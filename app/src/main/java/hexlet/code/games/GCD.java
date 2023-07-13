@@ -22,7 +22,11 @@ public class GCD implements GameDesign {
     }
 
     private int findGCD(int firstNumber, int secondNumber) {
-        if (firstNumber == 0 || secondNumber == 0) {
+        if (firstNumber == 0 && secondNumber != 0) {
+            return secondNumber;
+        } else if (secondNumber == 0 && firstNumber != 0) {
+            return firstNumber;
+        } else if (firstNumber == 0 && secondNumber == 0) {
             return 0;
         } else {
             int a = Math.max(firstNumber, secondNumber); // a is greater number
