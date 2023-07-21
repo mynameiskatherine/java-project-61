@@ -3,22 +3,19 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.GameUtils;
 
+import java.util.HashMap;
+
 public class GCD implements GameDesign {
     private static final int MAXRANDOMNUMBER = 100;
     private static String gameRules = "Find the greatest common divisor of given numbers.";
-    private static String gameQuestion;
-    private static String gameRightAnswer;
 
-    public final void playGame() {
-        getQuestionAnswer();
-        Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
-    }
-
-    private void getQuestionAnswer() {
+    public HashMap<String, String> generateGameQuestionAnswer() {
+        HashMap<String, String> result = new HashMap<>();
         int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         int secondNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
-        gameQuestion = firstNumber + " " + secondNumber;
-        gameRightAnswer = Integer.toString(findGCD(firstNumber, secondNumber));
+        result.put("question", firstNumber + " " + secondNumber);
+        result.put("answer", Integer.toString(findGCD(firstNumber, secondNumber)));
+        return result;
     }
 
     private int findGCD(int firstNumber, int secondNumber) {
@@ -39,5 +36,9 @@ public class GCD implements GameDesign {
             }
             return r;
         }
+    }
+
+    public final void playGame() {
+        Engine.gameEngine(gameRules, new GCD());
     }
 }

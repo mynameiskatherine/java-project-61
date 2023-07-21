@@ -1,12 +1,14 @@
 package hexlet.code;
 
+import java.util.HashMap;
 import java.util.Scanner;
+import hexlet.code.games.GameDesign;
 import org.apache.commons.lang3.StringUtils;
 
 public class Engine {
     private static final int MAXRIGHTANSWERS = 3;
 
-    public static void gameEngine(String gameRules, String gameQuestion, String gameRightAnswer) {
+    public static void gameEngine(String gameRules, GameDesign gameType) {
         //Greeting part
         String userName;
         Scanner inputName = new Scanner(System.in);
@@ -23,15 +25,17 @@ public class Engine {
 
         Scanner scanUserAnswer = new Scanner(System.in);
         for (int i = 1; i <= MAXRIGHTANSWERS; i++) {
-            System.out.println("Question: " + gameQuestion);
+            HashMap<String, String> gameRoundData;
+            gameRoundData = gameType.generateGameQuestionAnswer();
+            System.out.println("Question: " + gameRoundData.get("question"));
             System.out.println("Your answer: ");
             String userAnswer = ((scanUserAnswer.nextLine()).trim()).toLowerCase();
 
-            if (userAnswer.equals(gameRightAnswer)) {
+            if (userAnswer.equals(gameRoundData.get("answer"))) {
                 System.out.println("Correct!");
             } else {
                 System.out.printf("'%s' is wrong answer ;(. ", userAnswer);
-                System.out.printf("Correct answer was '%s'.", gameRightAnswer);
+                System.out.printf("Correct answer was '%s'.", gameRoundData.get("answer"));
                 System.out.println();
                 System.out.printf("Let's try again, %s!", userName);
                 System.out.println();

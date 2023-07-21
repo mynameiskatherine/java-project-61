@@ -3,21 +3,19 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.GameUtils;
 
+import java.util.HashMap;
+
 public class Prime implements GameDesign {
     private static final int MAXRANDOMNUMBER = 1000;
     private static String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static String gameQuestion;
-    private static String gameRightAnswer;
 
-    public final void playGame() {
-        getQuestionAnswer();
-        Engine.gameEngine(gameRules, gameQuestion, gameRightAnswer);
-    }
-
-    private void getQuestionAnswer() {
+    public HashMap<String, String> generateGameQuestionAnswer() {
+        HashMap<String, String> result = new HashMap<>();
         int questionedNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
-        gameQuestion = Integer.toString(questionedNumber);
-        gameRightAnswer = isPrime(questionedNumber) ? "yes" : "no";
+        char operation = GameUtils.randomOperation();
+        result.put("question", Integer.toString(questionedNumber));
+        result.put("answer", (isPrime(questionedNumber) ? "yes" : "no"));
+        return result;
     }
 
     private boolean isPrime(int number) {
@@ -32,4 +30,9 @@ public class Prime implements GameDesign {
             return true;
         }
     }
+
+    public final void playGame() {
+        Engine.gameEngine(gameRules, new Prime());
+    }
+
 }
