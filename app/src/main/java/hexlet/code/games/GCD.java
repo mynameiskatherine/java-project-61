@@ -9,7 +9,7 @@ public class GCD implements GameDesign {
     private static final int MAXRANDOMNUMBER = 100;
     private static String gameRules = "Find the greatest common divisor of given numbers.";
 
-    public HashMap<String, String> generateGameQuestionAnswer() {
+    public final HashMap<String, String> generateGameQuestionAnswer() {
         HashMap<String, String> result = new HashMap<>();
         int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         int secondNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);

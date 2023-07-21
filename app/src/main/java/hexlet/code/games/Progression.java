@@ -10,7 +10,7 @@ public class Progression implements GameDesign {
     private static final int MAXRANDOMNUMBER = 100;
     private static String gameRules = "What number is missing in the progression?";
 
-    public HashMap<String, String> generateGameQuestionAnswer() {
+    public final HashMap<String, String> generateGameQuestionAnswer() {
         HashMap<String, String> result = new HashMap<>();
         String[] progressionArray = new String[PROGRESSIONLENGTH];
         int firstNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);

@@ -9,7 +9,7 @@ public class Calc implements GameDesign {
     private static final int MAXRANDOMNUMBER = 50;
     private static String gameRules = "What is the result of the expression?";
 
-    public HashMap<String, String> generateGameQuestionAnswer() {
+    public final HashMap<String, String> generateGameQuestionAnswer() {
         HashMap<String, String> result = new HashMap<>();
         int firstNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);
         int secondNumber = GameUtils.randomNumber(-MAXRANDOMNUMBER, MAXRANDOMNUMBER);

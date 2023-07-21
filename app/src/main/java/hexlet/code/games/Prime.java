@@ -9,7 +9,7 @@ public class Prime implements GameDesign {
     private static final int MAXRANDOMNUMBER = 1000;
     private static String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public HashMap<String, String> generateGameQuestionAnswer() {
+    public final HashMap<String, String> generateGameQuestionAnswer() {
         HashMap<String, String> result = new HashMap<>();
         int questionedNumber = GameUtils.randomNumber(0, MAXRANDOMNUMBER);
         char operation = GameUtils.randomOperation();
